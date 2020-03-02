@@ -28,6 +28,8 @@ public class ClientRegisterImplTest extends ParentTestNg {
   private static final String ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_";
   private static final SecureRandom RANDOM = new SecureRandom();
 
+
+  //TODO ПЕРЕНЕСТИ ВНИЗ
   public static String generate(int count) {
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < count; ++i) {
@@ -36,6 +38,8 @@ public class ClientRegisterImplTest extends ParentTestNg {
     return sb.toString();
   }
 
+
+  //TODO ПЕРЕНЕСТИ ВНИЗ
   ClientToSave randomClient() {
     String surname = generate(10);
     String name = generate(5);
@@ -53,6 +57,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     return client;
   }
 
+  //TODO ПОМЕНЯТЬ НАЗВАНИЕ И НАПИСАТЬ ЧЕРЕЗ RANDOM CLIENT И ОТПАРВЛЯТЬ САМОГО КЛИЕНТА А НЕ ЕГО ПОЛЯ
   @Test
   public void getClient() {
 
@@ -64,10 +69,14 @@ public class ClientRegisterImplTest extends ParentTestNg {
     //
     //
 
+
+    //TODO нельзя использовать тестовое дао здесь
     clientTestDao.get().saveClient(id, surname, name, patronymic);
 
     //
     //
+
+    //TODO нельзя использовать настоящий регистр здесь
 
     ClientDisplay clientDisplay = clientRegister.get().getClient(id);
 
@@ -76,6 +85,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     assertThat(clientDisplay).isNotNull();
   }
 
+  //TODO поменять название и вынести генерацию листа
   @Test
   public void sortWithIdAsc() {
 
@@ -93,6 +103,9 @@ public class ClientRegisterImplTest extends ParentTestNg {
       clientDisplaysArr.add(clientDisplay);
 
       //
+      //TODO нельзя использовать тестовое дао здесь
+      //TODO нельзя использовать здесь 2 функции
+
       clientTestDao.get().saveClient(id, surname, name, patronymic);
       clientTestDao.get().saveAccountDatas(id, id, 9999f, "100");
 
@@ -122,6 +135,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
       clientDisplaysArr.add(clientDisplay);
       //
 
+      //TODO Смотри строку 106 107 88 строку
       clientTestDao.get().saveClient(id, surname, name, patronymic);
       clientTestDao.get().saveAccountDatas(id, id, 9999f, "100");
 
@@ -150,6 +164,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
       clientDisplaysArr.add(clientDisplay);
       //
+      //TODO Смотри строку 106 107 88 строку
 
       clientTestDao.get().saveClient(id, surname, name, patronymic);
       clientTestDao.get().saveAccountDatas(id, id, 9999f, "100");
@@ -179,6 +194,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
       clientDisplaysArr.add(clientDisplay);
       //
+      //TODO Смотри строку 106 107 88 строку
 
       clientTestDao.get().saveClient(id, surname, name, patronymic);
       clientTestDao.get().saveAccountDatas(id, id, 9999f, "100");
@@ -208,6 +224,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
       clientDisplaysArr.add(clientDisplay);
       //
+      //TODO Смотри строку 106 107 88 строку
 
       clientTestDao.get().saveClient(id, surname, name, patronymic);
       clientTestDao.get().saveAccountDatas(id, id, 9999f, "100");
@@ -237,6 +254,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
       clientDisplaysArr.add(clientDisplay);
       //
+      //TODO Смотри строку 106 107 88 строку
 
       clientTestDao.get().saveClient(id, surname, name, patronymic);
       clientTestDao.get().saveAccountDatas(id, id, 9999f, "100");
@@ -266,6 +284,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
       clientDisplaysArr.add(clientDisplay);
       //
+      //TODO Смотри строку 106 107 88 строку
 
       clientTestDao.get().saveClient(id, surname, name, patronymic);
       clientTestDao.get().saveAccountDatas(id, id, 9999f, "100");
@@ -295,6 +314,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
       clientDisplaysArr.add(clientDisplay);
       //
+      //TODO Смотри строку 106 107 88 строку
 
       clientTestDao.get().saveClient(id, surname, name, patronymic);
       clientTestDao.get().saveAccountDatas(id, id, 9999f, "100");
@@ -324,6 +344,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
       clientDisplaysArr.add(clientDisplay);
       //
+      //TODO Смотри строку 106 107 88 строку
 
       clientTestDao.get().saveClient(id, surname, name, patronymic);
       clientTestDao.get().saveAccountDatas(id, id, 9999f, "100");
@@ -353,6 +374,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
       clientDisplaysArr.add(clientDisplay);
       //
+      //TODO Смотри строку 106 107 88 строку
 
       clientTestDao.get().saveClient(id, surname, name, patronymic);
       clientTestDao.get().saveAccountDatas(id, id, 9999f, "100");
@@ -382,6 +404,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
       clientDisplaysArr.add(clientDisplay);
       //
+      //TODO Смотри строку 106 107 88 строку
 
       clientTestDao.get().saveClient(id, surname, name, patronymic);
       clientTestDao.get().saveAccountDatas(id, id, 9999f, "100");
@@ -411,6 +434,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
       clientDisplaysArr.add(clientDisplay);
       //
+      //TODO Смотри строку 106 107 88 строку
 
       clientTestDao.get().saveClient(id, surname, name, patronymic);
       clientTestDao.get().saveAccountDatas(id, id, 9999f, "100");
@@ -440,6 +464,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
       clientDisplaysArr.add(clientDisplay);
       //
+      //TODO Смотри строку 106 107 88 строку
 
       clientTestDao.get().saveClient(id, surname, name, patronymic);
       clientTestDao.get().saveAccountDatas(id, id, 9999f, "100");
@@ -469,6 +494,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
       clientDisplaysArr.add(clientDisplay);
       //
+      //TODO Смотри строку 106 107 88 строку
 
       clientTestDao.get().saveClient(id, surname, name, patronymic);
       clientTestDao.get().saveAccountDatas(id, id, 9999f, "100");
@@ -502,6 +528,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
       clientDisplaysArr.add(clientDisplay);
       //
+      //TODO Смотри строку 106 107 88 строку
 
       clientTestDao.get().saveClient(id, surname, name, patronymic);
       clientTestDao.get().saveAccountDatas(id, id, 9999f, "100");
@@ -529,6 +556,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
       clientDisplaysArr.add(clientDisplay);
       //
+      //TODO Смотри строку 106 107 88 строку
 
       clientTestDao.get().saveClient(id, surname, name, patronymic);
       clientTestDao.get().saveAccountDatas(id, id, 9999f, "100");
@@ -556,6 +584,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
       clientDisplaysArr.add(clientDisplay);
       //
+      //TODO Смотри строку 106 107 88 строку
 
       clientTestDao.get().saveClient(id, surname, name, patronymic);
       clientTestDao.get().saveAccountDatas(id, id, 9999f, "100");
