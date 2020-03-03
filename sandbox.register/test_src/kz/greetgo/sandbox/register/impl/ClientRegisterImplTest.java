@@ -78,8 +78,6 @@ public class ClientRegisterImplTest extends ParentTestNg {
   }
 
 
-
-
   private static final String ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_";
   private static final SecureRandom RANDOM = new SecureRandom();
 
