@@ -9,11 +9,8 @@ import java.util.List;
 
 public interface ClientTestDao {
   @Insert("insert into Client "
-    + "values (#{id}, #{surname}, #{name}, #{patronymic})")
-  void saveClient(@Param("id") String id,
-                  @Param("surname") String surname,
-                  @Param("name") String name,
-                  @Param("patronymic") String patronymic
+    + "values (#{client.id}, #{client.lastName}, #{client.firstName}, #{client.patron})")
+  void saveClient(@Param("client") ClientToSave client
   );
 
   @Insert("insert into client_account values (#{id}, #{clientId}, #{money}, #{number})")
