@@ -12,7 +12,7 @@ import java.util.List;
 
 public interface ClientDao {
   @Select("select client.id, surname||' '||name||' '||patronymic as fio " +
-    "from Client inner join client_account on client.id = client_account.client")
+    "from Client inner join client_account on client.id = client_account.client limit 5")
   List<ClientDisplay> list();
 
   @Select("select surname||' '||name||' '||patronymic as fio" +

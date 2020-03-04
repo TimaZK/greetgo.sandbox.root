@@ -40,7 +40,7 @@ alter table client
 
 create table client_addr
 (
-    id     serial       not null
+    id     varchar(255)       not null
         constraint client_addr_pkey
             primary key,
     client varchar(255) not null
@@ -58,7 +58,7 @@ alter table client_addr
 
 create table client_phone
 (
-    id     serial       not null
+    id     varchar(255)       not null
         constraint client_phone_pkey
             primary key,
     client varchar(255) not null
@@ -103,7 +103,7 @@ alter table transaction_type
 
 create table client_account_transaction
 (
-    id          serial not null
+    id          varchar(255) not null
         constraint client_account_transaction_pkey
             primary key,
     account     varchar(255)
