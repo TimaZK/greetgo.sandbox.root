@@ -77,4 +77,17 @@ public class ClientDisplay {
   public void setMinimumBalance(Integer minimumBalance) {
     this.minimumBalance = minimumBalance;
   }
+
+  @Override
+  public String toString() {
+    return "ClientDisplay{" +
+      "id='" + id + '\'' +
+      ", fio='" + fio + '\'' +
+      ", character='" + character + '\'' +
+      ", age=" + age +
+      ", totalBalanceOfAccounts=" + totalBalanceOfAccounts +
+      ", maximumBalance=" + maximumBalance +
+      ", minimumBalance=" + minimumBalance +
+      '}';
+  }
 }

@@ -31,20 +31,28 @@ public class ClientRegisterImplTest extends ParentTestNg {
   @Test
   public void sortWithIdAsc() {
 
+    //TODO сделай форики одинаковыми и попробуй вынести функцию создания массива людей
     for (int i = 1; i < 21; i++) {
       ClientToSave clientToSave = rndClientToSave();
       clientToSave.setId(Integer.toString(i));
       Charm charm = rndCharm();
       charm.setId(Integer.toString(i));
+
+      //TODO Вынести в одну функцию типо saveClientWithData
       clientTestDao.get().saveCharm(charm);
       clientTestDao.get().saveClient(clientToSave, charm.id);
       clientTestDao.get().saveAccountDatas(Integer.toString(i), clientToSave.id, 9999f, "100");
     }
+    //TODO не нужно вытаскивать моковые данные из чтобы проверить сортировку используй компараторы и функции класса AssertThat
+
+    //   assertThat(pageOfClients.clientsListOfPage).isSortedAccordingTo(Comparator.comparing(ClientRecord::getMinBalance).reversed());
+
     List<ClientDisplay> clientDisplayMockData = clientTestDao.get().list();
 
 
     //
 
+    //TODO PageFilter должен быть выше
     PageFilter pageFilter = new PageFilter("", "id", "asc", 100, 0);
     List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
 
@@ -59,6 +67,8 @@ public class ClientRegisterImplTest extends ParentTestNg {
   @Test
   public void sortWithIdDesc() {
 
+    //TODO смотри выше
+
     for (int i = 1; i < 21; i++) {
       ClientToSave clientToSave = rndClientToSave();
       clientToSave.setId(Integer.toString(i));
@@ -68,6 +78,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
       clientTestDao.get().saveClient(clientToSave, charm.id);
       clientTestDao.get().saveAccountDatas(Integer.toString(i), clientToSave.id, 9999f, "100");
     }
+
     List<ClientDisplay> clientDisplayMockData = clientTestDao.get().list();
 
 
@@ -83,6 +94,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     }
   }
 
+  //TODO смотри выше
 
   @Test
   public void sortWithFioAsc() {
@@ -111,6 +123,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     }
   }
 
+  //TODO смотри выше
 
   @Test
   public void sortWithFioDesc() {
@@ -139,6 +152,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     }
   }
 
+  //TODO смотри выше
 
   @Test
   public void sortWithCharAsc() {
@@ -167,6 +181,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     }
   }
 
+  //TODO смотри выше
 
   @Test
   public void sortWithCharDesc() {
@@ -195,6 +210,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     }
   }
 
+  //TODO смотри выше
 
   @Test
   public void sortWithTotalAsc() {
@@ -223,6 +239,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     }
   }
 
+  //TODO смотри выше
 
   @Test
   public void sortWithTotalDesc() {
@@ -251,6 +268,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     }
   }
 
+  //TODO смотри выше
 
   @Test
   public void sortWithMaxAsc() {
@@ -279,6 +297,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     }
   }
 
+  //TODO смотри выше
 
   @Test
   public void sortWithMaxDesc() {
@@ -307,6 +326,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     }
   }
 
+  //TODO смотри выше
 
   @Test
   public void sortWithMinAsc() {
@@ -335,6 +355,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     }
   }
 
+  //TODO смотри выше
 
   @Test
   public void sortWithMinDesc() {
@@ -376,10 +397,12 @@ public class ClientRegisterImplTest extends ParentTestNg {
       clientTestDao.get().saveClient(clientToSave, charm.id);
       clientTestDao.get().saveAccountDatas(Integer.toString(i), clientToSave.id, 9999f, "100");
     }
+    //TODO Не используешь значени функции - удали
     List<ClientDisplay> clientDisplayMockData = clientTestDao.get().list();
 
 
     //
+    //TODO смотри выше
 
     PageFilter pageFilter = new PageFilter("", "", "", 5, 0);
     List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
@@ -391,6 +414,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
   }
 
 
+  //TODO смотри выше
   @Test
   public void paginLastPage() {
 
@@ -417,7 +441,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     assertThat(clientDisplayArr.size()).isEqualTo(5);
   }
 
-
+  //TODO смотри выше
   @Test
   public void paginRndPage() {
 
@@ -444,7 +468,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     assertThat(clientDisplayArr.size()).isEqualTo(5);
   }
 
-
+  //TODO смотри выше
   @Test
   public void paginMoreDataThanPageSize() {
 
@@ -484,6 +508,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     clientTestDao.get().saveClient(clientToSave, charm.id);
     clientTestDao.get().saveClientAddress("1", "1", null);
 
+    //TODO ты не ничего не проверяешь здесь
   }
 
 
@@ -498,6 +523,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     clientTestDao.get().saveCharm(charm);
     clientTestDao.get().saveClient(clientToSave, charm.id);
     clientTestDao.get().saveClientPhone("1", "1", null);
+    //TODO ты не ничего не проверяешь здесь
   }
 
 
@@ -517,7 +543,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
       ClientDisplay clientDisplay1 = clientRegister.get().getClient(clientToSave.id);
 
     //
-
+    //TODO Мало проверять один обьект на IsNotNull
     assertThat(clientDisplay1).isNotNull();
   }
 
@@ -539,6 +565,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
       ClientDisplay clientDisplay1 = clientRegister.get().getClient(null);
 
     //
+    //TODO ТЫ не должен сохранять NULL человека
 
     assertThat(clientDisplay1).isNull();
   }
@@ -547,6 +574,8 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
   @Test
   public void clientAllValuesWithoutIdAndFioNullSaved() {
+
+    //TODO Этот тест не нужен вообще, ты не проверяешь тут модель которую не нужно вытаскивать в клиент в 1 экземпляре
 
     ClientToSave clientToSave = rndClientToSave();
     clientToSave.setId("1");
@@ -576,6 +605,8 @@ public class ClientRegisterImplTest extends ParentTestNg {
   @Test
   public void clientSaveWithNullCharm() {
 
+    //TODO Нельзя сохранять NULL данные
+
     ClientToSave clientToSave = rndClientToSave();
     clientToSave.setId("1");
     Charm charm = rndCharm();
@@ -596,6 +627,9 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
   @Test
   public void balanceNullValue() {
+
+    //TODO Нельзя сохранять NULL данные
+
 
     ClientToSave clientToSave = rndClientToSave();
     clientToSave.setId("1");
@@ -634,6 +668,9 @@ public class ClientRegisterImplTest extends ParentTestNg {
     clientTestDao.get().saveCharm(charm);
     clientTestDao.get().saveClient(clientToSave, charm.id);
     clientTestDao.get().saveClientAddress("1", "1", address);
+
+    //TODO Нету проверки
+
   }
 
 
@@ -649,6 +686,8 @@ public class ClientRegisterImplTest extends ParentTestNg {
     clientTestDao.get().saveCharm(charm);
     clientTestDao.get().saveClient(clientToSave, charm.id);
     clientTestDao.get().saveClientPhone("1", "1", phone);
+    //TODO Нету проверки
+
   }
 
 
@@ -666,6 +705,8 @@ public class ClientRegisterImplTest extends ParentTestNg {
     clientTestDao.get().saveClient(clientToSave, charm.id);
     clientTestDao.get().saveClientAddress("1", "1", address);
     clientTestDao.get().saveClientPhone("1", "1", phone);
+    //TODO Нету проверки
+
 
   }
 

@@ -6,9 +6,9 @@ import kz.greetgo.sandbox.controller.model.ClientDisplay;
 import kz.greetgo.sandbox.controller.model.ClientToSave;
 import kz.greetgo.sandbox.controller.model.PageFilter;
 import kz.greetgo.sandbox.controller.register.ClientRegister;
-import kz.greetgo.sandbox.controller.register.PersonRegister;
 import kz.greetgo.sandbox.register.dao.ClientDao;
 
+import java.lang.reflect.UndeclaredThrowableException;
 import java.util.List;
 
 @Bean
@@ -17,19 +17,18 @@ public class ClientRegisterImpl implements ClientRegister {
 
   @Override
   public ClientDisplay getClient(String clientId) {
-    return clientDao.get().loadDisplayClient(clientId);
+    throw new RuntimeException();
   }
 
   @Override
   public List<ClientDisplay> list(PageFilter pageFilter) {
-    return clientDao.get().list();
+    throw new RuntimeException();
   }
 
   @Override
   public void saveClient(ClientToSave client) {
-    clientDao.get().saveClient(client);
+    throw new RuntimeException();
   }
-
 
 
 }
