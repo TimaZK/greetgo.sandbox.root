@@ -3,6 +3,7 @@ package kz.greetgo.sandbox.register.impl;
 import kz.greetgo.depinject.core.Bean;
 import kz.greetgo.depinject.core.BeanGetter;
 import kz.greetgo.sandbox.controller.model.ClientDisplay;
+import kz.greetgo.sandbox.controller.model.ClientToEdit;
 import kz.greetgo.sandbox.controller.model.ClientToSave;
 import kz.greetgo.sandbox.controller.model.PageFilter;
 import kz.greetgo.sandbox.controller.register.ClientRegister;
@@ -16,8 +17,8 @@ public class ClientRegisterImpl implements ClientRegister {
   public BeanGetter<ClientDao> clientDao;
 
   @Override
-  public ClientDisplay getClient(String clientId) {
-    throw new RuntimeException();
+  public ClientToEdit getClient(String clientId) {
+    throw new NullPointerException();
   }
 
   @Override
