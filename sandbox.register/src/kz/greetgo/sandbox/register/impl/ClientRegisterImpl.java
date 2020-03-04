@@ -17,7 +17,7 @@ public class ClientRegisterImpl implements ClientRegister {
   public BeanGetter<ClientDao> clientDao;
 
   @Override
-  public ClientToEdit getClient(String clientId) {
+  public ClientToEdit getClient(String clientId) {sdfsdfsfd
     throw new NullPointerException();
   }
 

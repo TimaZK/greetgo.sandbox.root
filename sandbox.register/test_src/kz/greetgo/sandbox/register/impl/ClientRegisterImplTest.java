@@ -34,15 +34,12 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "id", "asc", 100, 0);
-
     //
-
+    //
       List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
-
     //
-
+    //
     assertThat(clientDisplayArr).isSortedAccordingTo(Comparator.comparing(ClientDisplay::getId));
-
   }
 
 
@@ -51,20 +48,17 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "id", "desc", 100, 0);
-
     //
-
+    //
       List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
-
     //
-
+    //
     assertThat(clientDisplayArr).isSortedAccordingTo(Comparator.comparing(ClientDisplay::getId).reversed());
-
   }
 
 
   @Test(expectedExceptions = RuntimeException.class)
-  public void test_sort_with_fio_asc() {
+  public void test_Sort_With_Fio_Asc() {
 
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "fio", "asc", 100, 0);
@@ -291,7 +285,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
 
   @Test(expectedExceptions = RuntimeException.class)
-  public void test_pagination_more_data_than_pagesize() {
+  public void test_pagination_more_data_than_pageSize() {
 
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "", "", 7, 2);
@@ -350,7 +344,6 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
     //
 
-    assertThat(client.getPhones()).isNull();
   }
 
 
@@ -386,7 +379,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
 
   @Test(expectedExceptions = NullPointerException.class)
-  public void test_client_detailIs_null() {
+  public void test_client_detail_Is_null() {
 
     ClientToSave clientToSave = rndClientToSave();
     clientToSave.setId("1");
@@ -526,7 +519,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
     //
 
-    assertThat(client.getPhones()).isNotNull();
+    assertThat(client.getPhones()).isEqualTo(clientToSave.phones);
     assertThat(client.getFactAddress()).isNotNull();
     assertThat(client.getRegAddress()).isNotNull();
 

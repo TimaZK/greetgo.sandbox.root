@@ -123,5 +123,4 @@ alter table client_account_transaction
   </changeSet>
 
 
-
 </databaseChangeLog>

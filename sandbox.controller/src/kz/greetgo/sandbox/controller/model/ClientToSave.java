@@ -10,6 +10,7 @@ public class ClientToSave {
   public String lastName;
   public String patron;
   public Gender gender;
+  //TODO birthDate
   public Date birthDay;
   public String charm;
   public Address factAddress;

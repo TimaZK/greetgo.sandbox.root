@@ -1,5 +1,6 @@
 package kz.greetgo.sandbox.controller.model;
 
+//TODO PHONE a не PHONES
 public class Phones {
   public String id;
   public String number;
