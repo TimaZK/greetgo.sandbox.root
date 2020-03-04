@@ -24,6 +24,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
   @BeforeMethod
   public void deleteAll() {
     clientTestDao.get().deleteAll();
+    clientTestDao.get().deleteAllCharm();
   }
 
 
@@ -33,7 +34,10 @@ public class ClientRegisterImplTest extends ParentTestNg {
     for (int i = 1; i < 21; i++) {
       ClientToSave clientToSave = rndClientToSave();
       clientToSave.setId(Integer.toString(i));
-      clientTestDao.get().saveClient(clientToSave);
+      Charm charm = rndCharm();
+      charm.setId(Integer.toString(i));
+      clientTestDao.get().saveCharm(charm);
+      clientTestDao.get().saveClient(clientToSave, charm.id);
       clientTestDao.get().saveAccountDatas(Integer.toString(i), clientToSave.id, 9999f, "100");
     }
     List<ClientDisplay> clientDisplayMockData = clientTestDao.get().list();
@@ -58,7 +62,10 @@ public class ClientRegisterImplTest extends ParentTestNg {
     for (int i = 1; i < 21; i++) {
       ClientToSave clientToSave = rndClientToSave();
       clientToSave.setId(Integer.toString(i));
-      clientTestDao.get().saveClient(clientToSave);
+      Charm charm = rndCharm();
+      charm.setId(Integer.toString(i));
+      clientTestDao.get().saveCharm(charm);
+      clientTestDao.get().saveClient(clientToSave, charm.id);
       clientTestDao.get().saveAccountDatas(Integer.toString(i), clientToSave.id, 9999f, "100");
     }
     List<ClientDisplay> clientDisplayMockData = clientTestDao.get().list();
@@ -83,7 +90,10 @@ public class ClientRegisterImplTest extends ParentTestNg {
     for (int i = 1; i < 21; i++) {
       ClientToSave clientToSave = rndClientToSave();
       clientToSave.setId(Integer.toString(i));
-      clientTestDao.get().saveClient(clientToSave);
+      Charm charm = rndCharm();
+      charm.setId(Integer.toString(i));
+      clientTestDao.get().saveCharm(charm);
+      clientTestDao.get().saveClient(clientToSave, charm.id);
       clientTestDao.get().saveAccountDatas(Integer.toString(i), clientToSave.id, 9999f, "100");
     }
     List<ClientDisplay> clientDisplayMockData = clientTestDao.get().list();
@@ -108,7 +118,10 @@ public class ClientRegisterImplTest extends ParentTestNg {
     for (int i = 1; i < 21; i++) {
       ClientToSave clientToSave = rndClientToSave();
       clientToSave.setId(Integer.toString(i));
-      clientTestDao.get().saveClient(clientToSave);
+      Charm charm = rndCharm();
+      charm.setId(Integer.toString(i));
+      clientTestDao.get().saveCharm(charm);
+      clientTestDao.get().saveClient(clientToSave, charm.id);
       clientTestDao.get().saveAccountDatas(Integer.toString(i), clientToSave.id, 9999f, "100");
     }
     List<ClientDisplay> clientDisplayMockData = clientTestDao.get().list();
@@ -133,7 +146,10 @@ public class ClientRegisterImplTest extends ParentTestNg {
     for (int i = 1; i < 21; i++) {
       ClientToSave clientToSave = rndClientToSave();
       clientToSave.setId(Integer.toString(i));
-      clientTestDao.get().saveClient(clientToSave);
+      Charm charm = rndCharm();
+      charm.setId(Integer.toString(i));
+      clientTestDao.get().saveCharm(charm);
+      clientTestDao.get().saveClient(clientToSave, charm.id);
       clientTestDao.get().saveAccountDatas(Integer.toString(i), clientToSave.id, 9999f, "100");
     }
     List<ClientDisplay> clientDisplayMockData = clientTestDao.get().list();
@@ -158,7 +174,10 @@ public class ClientRegisterImplTest extends ParentTestNg {
     for (int i = 1; i < 21; i++) {
       ClientToSave clientToSave = rndClientToSave();
       clientToSave.setId(Integer.toString(i));
-      clientTestDao.get().saveClient(clientToSave);
+      Charm charm = rndCharm();
+      charm.setId(Integer.toString(i));
+      clientTestDao.get().saveCharm(charm);
+      clientTestDao.get().saveClient(clientToSave, charm.id);
       clientTestDao.get().saveAccountDatas(Integer.toString(i), clientToSave.id, 9999f, "100");
     }
     List<ClientDisplay> clientDisplayMockData = clientTestDao.get().list();
@@ -183,7 +202,10 @@ public class ClientRegisterImplTest extends ParentTestNg {
     for (int i = 1; i < 21; i++) {
       ClientToSave clientToSave = rndClientToSave();
       clientToSave.setId(Integer.toString(i));
-      clientTestDao.get().saveClient(clientToSave);
+      Charm charm = rndCharm();
+      charm.setId(Integer.toString(i));
+      clientTestDao.get().saveCharm(charm);
+      clientTestDao.get().saveClient(clientToSave, charm.id);
       clientTestDao.get().saveAccountDatas(Integer.toString(i), clientToSave.id, 9999f, "100");
     }
     List<ClientDisplay> clientDisplayMockData = clientTestDao.get().list();
@@ -208,7 +230,10 @@ public class ClientRegisterImplTest extends ParentTestNg {
     for (int i = 1; i < 21; i++) {
       ClientToSave clientToSave = rndClientToSave();
       clientToSave.setId(Integer.toString(i));
-      clientTestDao.get().saveClient(clientToSave);
+      Charm charm = rndCharm();
+      charm.setId(Integer.toString(i));
+      clientTestDao.get().saveCharm(charm);
+      clientTestDao.get().saveClient(clientToSave, charm.id);
       clientTestDao.get().saveAccountDatas(Integer.toString(i), clientToSave.id, 9999f, "100");
     }
     List<ClientDisplay> clientDisplayMockData = clientTestDao.get().list();
@@ -233,7 +258,10 @@ public class ClientRegisterImplTest extends ParentTestNg {
     for (int i = 1; i < 21; i++) {
       ClientToSave clientToSave = rndClientToSave();
       clientToSave.setId(Integer.toString(i));
-      clientTestDao.get().saveClient(clientToSave);
+      Charm charm = rndCharm();
+      charm.setId(Integer.toString(i));
+      clientTestDao.get().saveCharm(charm);
+      clientTestDao.get().saveClient(clientToSave, charm.id);
       clientTestDao.get().saveAccountDatas(Integer.toString(i), clientToSave.id, 9999f, "100");
     }
     List<ClientDisplay> clientDisplayMockData = clientTestDao.get().list();
@@ -258,7 +286,10 @@ public class ClientRegisterImplTest extends ParentTestNg {
     for (int i = 1; i < 21; i++) {
       ClientToSave clientToSave = rndClientToSave();
       clientToSave.setId(Integer.toString(i));
-      clientTestDao.get().saveClient(clientToSave);
+      Charm charm = rndCharm();
+      charm.setId(Integer.toString(i));
+      clientTestDao.get().saveCharm(charm);
+      clientTestDao.get().saveClient(clientToSave, charm.id);
       clientTestDao.get().saveAccountDatas(Integer.toString(i), clientToSave.id, 9999f, "100");
     }
     List<ClientDisplay> clientDisplayMockData = clientTestDao.get().list();
@@ -283,7 +314,10 @@ public class ClientRegisterImplTest extends ParentTestNg {
     for (int i = 1; i < 21; i++) {
       ClientToSave clientToSave = rndClientToSave();
       clientToSave.setId(Integer.toString(i));
-      clientTestDao.get().saveClient(clientToSave);
+      Charm charm = rndCharm();
+      charm.setId(Integer.toString(i));
+      clientTestDao.get().saveCharm(charm);
+      clientTestDao.get().saveClient(clientToSave, charm.id);
       clientTestDao.get().saveAccountDatas(Integer.toString(i), clientToSave.id, 9999f, "100");
     }
     List<ClientDisplay> clientDisplayMockData = clientTestDao.get().list();
@@ -308,7 +342,10 @@ public class ClientRegisterImplTest extends ParentTestNg {
     for (int i = 1; i < 21; i++) {
       ClientToSave clientToSave = rndClientToSave();
       clientToSave.setId(Integer.toString(i));
-      clientTestDao.get().saveClient(clientToSave);
+      Charm charm = rndCharm();
+      charm.setId(Integer.toString(i));
+      clientTestDao.get().saveCharm(charm);
+      clientTestDao.get().saveClient(clientToSave, charm.id);
       clientTestDao.get().saveAccountDatas(Integer.toString(i), clientToSave.id, 9999f, "100");
     }
     List<ClientDisplay> clientDisplayMockData = clientTestDao.get().list();
@@ -333,7 +370,10 @@ public class ClientRegisterImplTest extends ParentTestNg {
     for (int i = 1; i < 21; i++) {
       ClientToSave clientToSave = rndClientToSave();
       clientToSave.setId(Integer.toString(i));
-      clientTestDao.get().saveClient(clientToSave);
+      Charm charm = rndCharm();
+      charm.setId(Integer.toString(i));
+      clientTestDao.get().saveCharm(charm);
+      clientTestDao.get().saveClient(clientToSave, charm.id);
       clientTestDao.get().saveAccountDatas(Integer.toString(i), clientToSave.id, 9999f, "100");
     }
     List<ClientDisplay> clientDisplayMockData = clientTestDao.get().list();
@@ -357,7 +397,10 @@ public class ClientRegisterImplTest extends ParentTestNg {
     for (int i = 1; i < 21; i++) {
       ClientToSave clientToSave = rndClientToSave();
       clientToSave.setId(Integer.toString(i));
-      clientTestDao.get().saveClient(clientToSave);
+      Charm charm = rndCharm();
+      charm.setId(Integer.toString(i));
+      clientTestDao.get().saveCharm(charm);
+      clientTestDao.get().saveClient(clientToSave, charm.id);
       clientTestDao.get().saveAccountDatas(Integer.toString(i), clientToSave.id, 9999f, "100");
     }
     List<ClientDisplay> clientDisplayMockData = clientTestDao.get().list();
@@ -381,7 +424,10 @@ public class ClientRegisterImplTest extends ParentTestNg {
     for (int i = 1; i < 21; i++) {
       ClientToSave clientToSave = rndClientToSave();
       clientToSave.setId(Integer.toString(i));
-      clientTestDao.get().saveClient(clientToSave);
+      Charm charm = rndCharm();
+      charm.setId(Integer.toString(i));
+      clientTestDao.get().saveCharm(charm);
+      clientTestDao.get().saveClient(clientToSave, charm.id);
       clientTestDao.get().saveAccountDatas(Integer.toString(i), clientToSave.id, 9999f, "100");
     }
     List<ClientDisplay> clientDisplayMockData = clientTestDao.get().list();
@@ -405,7 +451,10 @@ public class ClientRegisterImplTest extends ParentTestNg {
     for (int i = 1; i < 21; i++) {
       ClientToSave clientToSave = rndClientToSave();
       clientToSave.setId(Integer.toString(i));
-      clientTestDao.get().saveClient(clientToSave);
+      Charm charm = rndCharm();
+      charm.setId(Integer.toString(i));
+      clientTestDao.get().saveCharm(charm);
+      clientTestDao.get().saveClient(clientToSave, charm.id);
       clientTestDao.get().saveAccountDatas(Integer.toString(i), clientToSave.id, 9999f, "100");
     }
     List<ClientDisplay> clientDisplayMockData = clientTestDao.get().list();
@@ -428,7 +477,11 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
     ClientToSave clientToSave = rndClientToSave();
     clientToSave.setId("1");
-    clientTestDao.get().saveClient(clientToSave);
+    Charm charm = rndCharm();
+    charm.setId("1");
+
+    clientTestDao.get().saveCharm(charm);
+    clientTestDao.get().saveClient(clientToSave, charm.id);
     clientTestDao.get().saveClientAddress("1", "1", null);
 
   }
@@ -436,19 +489,28 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
   @Test
   public void phoneNull() {
+
     ClientToSave clientToSave = rndClientToSave();
     clientToSave.setId("1");
-//    System.out.println(clientToSave);
-    clientTestDao.get().saveClient(clientToSave);
+    Charm charm = rndCharm();
+    charm.setId("1");
+
+    clientTestDao.get().saveCharm(charm);
+    clientTestDao.get().saveClient(clientToSave, charm.id);
     clientTestDao.get().saveClientPhone("1", "1", null);
   }
 
 
   @Test
   public void clientDetailIsNotNull() {
+
     ClientToSave clientToSave = rndClientToSave();
     clientToSave.setId("1");
-    clientTestDao.get().saveClient(clientToSave);
+    Charm charm = rndCharm();
+    charm.setId("1");
+
+    clientTestDao.get().saveCharm(charm);
+    clientTestDao.get().saveClient(clientToSave, charm.id);
 
     //
 
@@ -461,10 +523,16 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
 
   @Test
+
   public void clientDetailIsNull() {
+
     ClientToSave clientToSave = rndClientToSave();
     clientToSave.setId("1");
-    clientTestDao.get().saveClient(clientToSave);
+    Charm charm = rndCharm();
+    charm.setId("1");
+
+    clientTestDao.get().saveCharm(charm);
+    clientTestDao.get().saveClient(clientToSave, charm.id);
 
     //
 
@@ -479,11 +547,15 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
   @Test
   public void clientAllValuesWithoutIdAndFioNullSaved() {
+
     ClientToSave clientToSave = rndClientToSave();
     clientToSave.setId("1");
+    Charm charm = rndCharm();
+    charm.setId("1");
     PageFilter pageFilter = new PageFilter("", "id", "asc", 100, 0);
 
-    clientTestDao.get().saveClient(clientToSave);
+    clientTestDao.get().saveCharm(charm);
+    clientTestDao.get().saveClient(clientToSave, charm.id);
 
     //
 
@@ -503,10 +575,14 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
   @Test
   public void clientSaveWithNullCharm() {
+
     ClientToSave clientToSave = rndClientToSave();
     clientToSave.setId("1");
+    Charm charm = rndCharm();
+    charm.setId("1");
 
-    clientTestDao.get().saveClient(clientToSave);
+    clientTestDao.get().saveCharm(charm);
+    clientTestDao.get().saveClient(clientToSave, charm.id);
 
     //
 
@@ -520,11 +596,16 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
   @Test
   public void balanceNullValue() {
+
     ClientToSave clientToSave = rndClientToSave();
     clientToSave.setId("1");
+    Charm charm = rndCharm();
+    charm.setId("1");
+
     PageFilter pageFilter = new PageFilter("", "", "", 5, 0);
 
-    clientTestDao.get().saveClient(clientToSave);
+    clientTestDao.get().saveCharm(charm);
+    clientTestDao.get().saveClient(clientToSave, charm.id);
     clientTestDao.get().saveAccountDatas("1", clientToSave.id, null, null);
 
     //
@@ -538,6 +619,54 @@ public class ClientRegisterImplTest extends ParentTestNg {
       assertThat(list.get(i).maximumBalance).isNull();
       assertThat(list.get(i).minimumBalance).isNull();
     }
+  }
+
+
+  @Test
+  public void saveClientWithAddress() {
+
+    ClientToSave clientToSave = rndClientToSave();
+    clientToSave.setId("1");
+    Charm charm = rndCharm();
+    charm.setId("1");
+    Address address = rndAddress();
+
+    clientTestDao.get().saveCharm(charm);
+    clientTestDao.get().saveClient(clientToSave, charm.id);
+    clientTestDao.get().saveClientAddress("1", "1", address);
+  }
+
+
+  @Test
+  public void saveClientWithPhone() {
+
+    ClientToSave clientToSave = rndClientToSave();
+    clientToSave.setId("1");
+    Charm charm = rndCharm();
+    charm.setId("1");
+    Phones phone = rndPhones();
+
+    clientTestDao.get().saveCharm(charm);
+    clientTestDao.get().saveClient(clientToSave, charm.id);
+    clientTestDao.get().saveClientPhone("1", "1", phone);
+  }
+
+
+  @Test
+  public void saveClientWithAllValues() {
+
+    ClientToSave clientToSave = rndClientToSave();
+    clientToSave.setId("1");
+    Charm charm = rndCharm();
+    charm.setId("1");
+    Address address = rndAddress();
+    Phones phone = rndPhones();
+
+    clientTestDao.get().saveCharm(charm);
+    clientTestDao.get().saveClient(clientToSave, charm.id);
+    clientTestDao.get().saveClientAddress("1", "1", address);
+    clientTestDao.get().saveClientPhone("1", "1", phone);
+
   }
 
 
@@ -563,6 +692,14 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
 
 
+  Charm rndCharm() {
+    Charm charm = new Charm();
+    charm.setName(generate(5));
+
+    return charm;
+  }
+
+
   ClientToSave rndClientToSave() {
     ClientToSave clientToSave = new ClientToSave();
     clientToSave.setLastName(generate(5));
@@ -570,9 +707,6 @@ public class ClientRegisterImplTest extends ParentTestNg {
     clientToSave.setPatron(generate(5));
     clientToSave.setGender(Gender.MALE);
     clientToSave.setBirthDay(new Date());
-    clientToSave.setFactAddress(rndAddress());
-    clientToSave.setRegAddress(rndAddress());
-    clientToSave.setPhones(rndPhones());
 
     return clientToSave;
   }
@@ -589,16 +723,13 @@ public class ClientRegisterImplTest extends ParentTestNg {
   }
 
 
-  Phones[] rndPhones() {
-    Phones[] phones = new Phones[2];
+  Phones rndPhones() {
     Phones phone = new Phones();
     phone.setId(generate(1));
     phone.setNumber(generate(11));
     phone.setType(PhoneType.MOBILE);
-    phones[0] = phone;
-    phones[1] = phone;
 
-    return phones;
+    return phone;
   }
 
 

@@ -12,7 +12,7 @@ import java.util.List;
 
 public interface ClientDao {
   @Select("select client.id, surname||' '||name||' '||patronymic as fio " +
-    "from Client inner join client_account on client.id = client_account.client limit 5")
+    "from Client inner join client_account on client.id = client_account.client")
   List<ClientDisplay> list();
 
   @Select("select client.id, surname||' '||name||' '||patronymic as fio" +
@@ -20,7 +20,7 @@ public interface ClientDao {
   ClientDisplay loadDisplayClient(@Param("clientId") String clientId);
 
   @Insert("insert into Client "
-    + "values (#{client.id}, #{client.surname}, #{client.name}, #{client.patronymic})")
+    + "values (#{client.id}, #{client.lastName}, #{client.firstName}, #{client.patronymic})")
   void saveClient(@Param("client") ClientToSave client
   );
 }

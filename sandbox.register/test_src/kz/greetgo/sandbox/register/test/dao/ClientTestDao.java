@@ -1,6 +1,7 @@
 package kz.greetgo.sandbox.register.test.dao;
 
 import kz.greetgo.sandbox.controller.model.Address;
+import kz.greetgo.sandbox.controller.model.Charm;
 import kz.greetgo.sandbox.controller.model.ClientDisplay;
 import kz.greetgo.sandbox.controller.model.ClientToSave;
 import kz.greetgo.sandbox.controller.model.PersonDisplay;
@@ -10,10 +11,14 @@ import org.apache.ibatis.annotations.*;
 import java.util.List;
 
 public interface ClientTestDao {
+  @Insert("insert into Charm values (#{charm.id}, #{charm.name})")
+  void saveCharm(@Param("charm") Charm charm);
+
   @Insert("insert into Client "
-    + "values (#{client.id}, #{client.lastName}, #{client.firstName}, #{client.patron})")
-  void saveClient(@Param("client") ClientToSave client
-  );
+    + "values (#{client.id}, #{client.lastName}, #{client.firstName}, #{client.patron}, #{client.gender}, #{client.birthDay},"
+    + "#{charmId})")
+  void saveClient(@Param("client") ClientToSave client,
+                  @Param("charmId") String charmId);
 
   @Insert("insert into client_account values (#{id}, #{clientId}, #{money}, #{number})")
   void saveAccountDatas(@Param("id") String id,
@@ -28,6 +33,9 @@ public interface ClientTestDao {
 
   @Delete("delete from client")
   void deleteAll();
+
+  @Delete("delete from Charm")
+  void deleteAllCharm();
 
   @Select("select * from Client")
   List<ClientDisplay> list();
