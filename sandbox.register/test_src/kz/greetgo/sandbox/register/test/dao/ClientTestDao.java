@@ -38,7 +38,7 @@ public interface ClientTestDao {
                        @Param("clientId") String clientId,
                        @Param("phone") Phones phone);
 
-  @Select("select surname||' '||name||' '||patronymic as fio from client where (#{id})")
+  @Select("select client.id, surname||' '||name||' '||patronymic as fio from client where (#{id})")
   ClientDisplay getClientDetails(@Param("id") String id);
 
 }

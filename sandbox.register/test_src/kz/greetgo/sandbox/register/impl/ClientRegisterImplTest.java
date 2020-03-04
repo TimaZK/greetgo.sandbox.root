@@ -1,5 +1,6 @@
 package kz.greetgo.sandbox.register.impl;
 
+import java.util.Date;
 import kz.greetgo.depinject.core.BeanGetter;
 import kz.greetgo.sandbox.controller.model.*;
 import kz.greetgo.sandbox.controller.register.ClientRegister;
@@ -10,7 +11,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.security.SecureRandom;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -541,25 +541,6 @@ public class ClientRegisterImplTest extends ParentTestNg {
   }
 
 
-  @Test
-  public void clientDetailIsNotEqualsToData() {
-    ClientToSave clientToSave = rndClientToSave();
-    ClientToSave clientToSave1 = rndClientToSave();
-    clientToSave.setId("1");
-    clientToSave1.setId("2");
-    clientTestDao.get().saveClient(clientToSave);
-    clientTestDao.get().saveClient(clientToSave1);
-
-    //
-
-    ClientDisplay clientDisplay1 = clientRegister.get().getClient("2");
-
-    //
-
-    assertThat(clientToSave.getId()).isNotEqualTo(clientDisplay1.getId());
-  }
-
-
 
 
 
@@ -587,8 +568,37 @@ public class ClientRegisterImplTest extends ParentTestNg {
     clientToSave.setLastName(generate(5));
     clientToSave.setFirstName(generate(5));
     clientToSave.setPatron(generate(5));
+    clientToSave.setGender(Gender.MALE);
+    clientToSave.setBirthDay(new Date());
+    clientToSave.setFactAddress(rndAddress());
+    clientToSave.setRegAddress(rndAddress());
+    clientToSave.setPhones(rndPhones());
 
     return clientToSave;
+  }
+
+
+  Address rndAddress() {
+    Address address = new Address();
+    address.setStreet(generate(10));
+    address.setHouse(RND.plusInt(1));
+    address.setFlat(RND.plusInt(1));
+    address.setType(AddressType.FACT);
+
+    return address;
+  }
+
+
+  Phones[] rndPhones() {
+    Phones[] phones = new Phones[2];
+    Phones phone = new Phones();
+    phone.setId(generate(1));
+    phone.setNumber(generate(11));
+    phone.setType(PhoneType.MOBILE);
+    phones[0] = phone;
+    phones[1] = phone;
+
+    return phones;
   }
 
 

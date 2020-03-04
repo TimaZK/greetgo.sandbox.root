@@ -15,7 +15,7 @@ public interface ClientDao {
     "from Client inner join client_account on client.id = client_account.client limit 5")
   List<ClientDisplay> list();
 
-  @Select("select surname||' '||name||' '||patronymic as fio" +
+  @Select("select client.id, surname||' '||name||' '||patronymic as fio" +
     " from Client where id = #{clientId}")
   ClientDisplay loadDisplayClient(@Param("clientId") String clientId);
 
