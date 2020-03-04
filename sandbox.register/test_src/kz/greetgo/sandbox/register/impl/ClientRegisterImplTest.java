@@ -444,6 +444,125 @@ public class ClientRegisterImplTest extends ParentTestNg {
   }
 
 
+  @Test
+  public void clientDetailIsNotNull() {
+    ClientToSave clientToSave = rndClientToSave();
+    clientToSave.setId("1");
+    clientTestDao.get().saveClient(clientToSave);
+
+    //
+
+      ClientDisplay clientDisplay1 = clientRegister.get().getClient(clientToSave.id);
+
+    //
+
+    assertThat(clientDisplay1).isNotNull();
+  }
+
+
+  @Test
+  public void clientDetailIsNull() {
+    ClientToSave clientToSave = rndClientToSave();
+    clientToSave.setId("1");
+    clientTestDao.get().saveClient(clientToSave);
+
+    //
+
+      ClientDisplay clientDisplay1 = clientRegister.get().getClient(null);
+
+    //
+
+    assertThat(clientDisplay1).isNull();
+  }
+
+
+
+  @Test
+  public void clientAllValuesWithoutIdAndFioNullSaved() {
+    ClientToSave clientToSave = rndClientToSave();
+    clientToSave.setId("1");
+    PageFilter pageFilter = new PageFilter("", "id", "asc", 100, 0);
+
+    clientTestDao.get().saveClient(clientToSave);
+
+    //
+
+    ClientDisplay clientDisplay1 = clientRegister.get().getClient(clientToSave.id);
+
+    //
+
+    assertThat(clientDisplay1.fio).isNotNull();
+    assertThat(clientDisplay1.age).isNull();
+    assertThat(clientDisplay1.character).isNull();
+    assertThat(clientDisplay1.totalBalanceOfAccounts).isNull();
+    assertThat(clientDisplay1.maximumBalance).isNull();
+    assertThat(clientDisplay1.minimumBalance).isNull();
+
+  }
+
+
+  @Test
+  public void clientSaveWithNullCharm() {
+    ClientToSave clientToSave = rndClientToSave();
+    clientToSave.setId("1");
+
+    clientTestDao.get().saveClient(clientToSave);
+
+    //
+
+    ClientDisplay clientDisplay1 = clientRegister.get().getClient(clientToSave.id);
+
+    //
+
+    assertThat(clientDisplay1.character).isNull();
+  }
+
+
+  @Test
+  public void balanceNullValue() {
+    ClientToSave clientToSave = rndClientToSave();
+    clientToSave.setId("1");
+    PageFilter pageFilter = new PageFilter("", "", "", 5, 0);
+
+    clientTestDao.get().saveClient(clientToSave);
+    clientTestDao.get().saveAccountDatas("1", clientToSave.id, null, null);
+
+    //
+
+    List<ClientDisplay> list = clientRegister.get().list(pageFilter);
+
+    //
+
+    for (int i = 0; i < list.size(); i++) {
+      assertThat(list.get(i).totalBalanceOfAccounts).isNull();
+      assertThat(list.get(i).maximumBalance).isNull();
+      assertThat(list.get(i).minimumBalance).isNull();
+    }
+  }
+
+
+  @Test
+  public void clientDetailIsNotEqualsToData() {
+    ClientToSave clientToSave = rndClientToSave();
+    ClientToSave clientToSave1 = rndClientToSave();
+    clientToSave.setId("1");
+    clientToSave1.setId("2");
+    clientTestDao.get().saveClient(clientToSave);
+    clientTestDao.get().saveClient(clientToSave1);
+
+    //
+
+    ClientDisplay clientDisplay1 = clientRegister.get().getClient("2");
+
+    //
+
+    assertThat(clientToSave.getId()).isNotEqualTo(clientDisplay1.getId());
+  }
+
+
+
+
+
 
 
 
