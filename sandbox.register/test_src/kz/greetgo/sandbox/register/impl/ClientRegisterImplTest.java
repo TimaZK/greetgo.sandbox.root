@@ -30,30 +30,28 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
 
   @Test(expectedExceptions = RuntimeException.class)
-  public void test_sort_with_Id_asc() {
+  public void test_Sort_With_Id_Asc() {
 
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "id", "asc", 100, 0);
     //
-    //
       List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
     //
-    //
     assertThat(clientDisplayArr).isSortedAccordingTo(Comparator.comparing(ClientDisplay::getId));
+
   }
 
 
   @Test(expectedExceptions = RuntimeException.class)
-  public void test_sort_with_Id_desc() {
+  public void test_Sort_With_Id_Desc() {
 
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "id", "desc", 100, 0);
     //
-    //
       List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
     //
-    //
     assertThat(clientDisplayArr).isSortedAccordingTo(Comparator.comparing(ClientDisplay::getId).reversed());
+
   }
 
 
@@ -62,98 +60,74 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "fio", "asc", 100, 0);
-
     //
-
       List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
-
     //
-
     assertThat(clientDisplayArr).isSortedAccordingTo(Comparator.comparing(ClientDisplay::getId));
 
   }
 
 
   @Test(expectedExceptions = RuntimeException.class)
-  public void test_sort_with_fio_desc() {
+  public void test_Sort_With_Fio_Desc() {
 
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "fio", "desc", 100, 0);
-
     //
-
       List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
-
     //
-
     assertThat(clientDisplayArr).isSortedAccordingTo(Comparator.comparing(ClientDisplay::getId).reversed());
 
   }
 
 
   @Test(expectedExceptions = RuntimeException.class)
-  public void test_sort_with_character_asc() {
+  public void test_Sort_With_Character_Asc() {
 
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "character", "asc", 100, 0);
-
     //
-
       List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
-
     //
-
     assertThat(clientDisplayArr).isSortedAccordingTo(Comparator.comparing(ClientDisplay::getId));
 
   }
 
 
   @Test(expectedExceptions = RuntimeException.class)
-  public void test_sort_with_character_desc() {
+  public void test_Sort_With_Character_Desc() {
 
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "character", "desc", 100, 0);
-
     //
-
       List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
-
     //
-
     assertThat(clientDisplayArr).isSortedAccordingTo(Comparator.comparing(ClientDisplay::getId).reversed());
 
   }
 
 
   @Test(expectedExceptions = RuntimeException.class)
-  public void test_sort_with_total_balance_asc() {
+  public void test_Sort_With_Total_Balance_Asc() {
 
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "totalBalanceOfAccounts", "asc", 100, 0);
-
     //
-
       List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
-
     //
-
     assertThat(clientDisplayArr).isSortedAccordingTo(Comparator.comparing(ClientDisplay::getId));
 
   }
 
 
   @Test(expectedExceptions = RuntimeException.class)
-  public void test_sort_with_total_balance_desc() {
+  public void test_Sort_with_Total_Balance_Desc() {
 
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "totalBalanceOfAccounts", "desc", 100, 0);
-
     //
-
       List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
-
     //
-
     assertThat(clientDisplayArr).isSortedAccordingTo(Comparator.comparing(ClientDisplay::getId).reversed());
 
   }
@@ -161,209 +135,156 @@ public class ClientRegisterImplTest extends ParentTestNg {
   //TODO смотри выше
 
   @Test(expectedExceptions = RuntimeException.class)
-  public void test_sort_with_maximum_balance_asc() {
+  public void test_Sort_With_Maximum_Balance_Asc() {
 
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "maximumBalance", "asc", 100, 0);
-
     //
-
       List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
-
     //
-
     assertThat(clientDisplayArr).isSortedAccordingTo(Comparator.comparing(ClientDisplay::getId));
 
   }
 
 
   @Test(expectedExceptions = RuntimeException.class)
-  public void test_sort_with_maximum_balance_desc() {
+  public void test_Sort_With_Maximum_Balance_Desc() {
 
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "maximumBalance", "desc", 100, 0);
-
     //
-
       List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
-
     //
-
     assertThat(clientDisplayArr).isSortedAccordingTo(Comparator.comparing(ClientDisplay::getId).reversed());
 
   }
 
 
   @Test(expectedExceptions = RuntimeException.class)
-  public void test_sort_with_minimum_balance_asc() {
+  public void test_Sort_With_Minimum_Balance_Asc() {
 
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "minimumBalance", "asc", 100, 0);
-
     //
-
       List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
-
     //
-
     assertThat(clientDisplayArr).isSortedAccordingTo(Comparator.comparing(ClientDisplay::getId));
 
   }
 
 
   @Test(expectedExceptions = RuntimeException.class)
-  public void test_sort_with_minimum_balance_desc() {
+  public void test_Sort_With_Minimum_Balance_Desc() {
 
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "minimumBalance", "desc", 100, 0);
-
     //
-
       List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
-
     //
-
     assertThat(clientDisplayArr).isSortedAccordingTo(Comparator.comparing(ClientDisplay::getId).reversed());
 
   }
 
 
   @Test(expectedExceptions = RuntimeException.class)
-  public void test_pagination_first_page() {
+  public void test_Pagination_First_Page() {
 
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "", "", 5, 0);
-
     //
-
       List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
-
     //
-
-
     assertThat(clientDisplayArr.size()).isEqualTo(5);
 
   }
 
 
   @Test(expectedExceptions = RuntimeException.class)
-  public void test_pagination_last_page() {
+  public void test_Pagination_Last_Page() {
 
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "", "", 5, 3);
-
-
     //
-
       List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
-
     //
-
-
     assertThat(clientDisplayArr.size()).isEqualTo(5);
 
   }
 
 
   @Test(expectedExceptions = RuntimeException.class)
-  public void test_pagination_random_page() {
+  public void test_Pagination_Random_Page() {
 
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "", "", 5, getRandomNumberInRange(0,3));
-
-
     //
-
       List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
-
     //
-
-
     assertThat(clientDisplayArr.size()).isEqualTo(5);
 
   }
 
 
   @Test(expectedExceptions = RuntimeException.class)
-  public void test_pagination_more_data_than_pageSize() {
+  public void test_Pagination_More_Data_Than_Pagesize() {
 
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "", "", 7, 2);
-
-
     //
-
       List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
-
     //
-
-
     assertThat(clientDisplayArr.size()).isEqualTo(6);
 
   }
 
 
   @Test(expectedExceptions = NullPointerException.class)
-  public void test_save_client_with_null_address() {
+  public void test_Save_Client_With_Null_Address() {
 
     ClientToSave clientToSave = rndClientToSave();
     clientToSave.setId("1");
     Charm charm = rndCharm();
     charm.setId("1");
-
     clientTestDao.get().saveCharm(charm);
     clientTestDao.get().saveClient(clientToSave, charm.id);
     clientTestDao.get().saveClientAddress("1", "1", null);
-
     //
-
       ClientToEdit client = clientRegister.get().getClient(clientToSave.id);
-
     //
-
     assertThat(client.getFactAddress()).isNull();
     assertThat(client.getRegAddress()).isNull();
   }
 
 
   @Test(expectedExceptions = NullPointerException.class)
-  public void test_save_client_with_null_phone() {
+  public void test_Save_Client_With_Null_Phone() {
 
     ClientToSave clientToSave = rndClientToSave();
     clientToSave.setId("1");
     Charm charm = rndCharm();
     charm.setId("1");
-
     clientTestDao.get().saveCharm(charm);
     clientTestDao.get().saveClient(clientToSave, charm.id);
     clientTestDao.get().saveClientPhone("1", "1", null);
-
     //
-
     ClientToEdit client = clientRegister.get().getClient(clientToSave.id);
-
     //
-
+    assertThat(client.getPhones()).isNull();
   }
 
 
   @Test(expectedExceptions = NullPointerException.class)
-  public void test_client_detailIs_not_null() {
+  public void test_Client_DetailIs_Not_Null() {
 
     ClientToSave clientToSave = rndClientToSave();
     clientToSave.setId("1");
     Charm charm = rndCharm();
     charm.setId("1");
-
     clientTestDao.get().saveCharm(charm);
     clientTestDao.get().saveClient(clientToSave, charm.id);
-
     //
-
       ClientToEdit client = clientRegister.get().getClient(clientToSave.id);
-
     //
-
     assertThat(client).isNotNull();
     assertThat(client.getId()).isNotNull();
     assertThat(client.getLastName()).isNotNull();
@@ -379,68 +300,52 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
 
   @Test(expectedExceptions = NullPointerException.class)
-  public void test_client_detail_Is_null() {
+  public void test_Client_Detail_Is_Null() {
 
     ClientToSave clientToSave = rndClientToSave();
     clientToSave.setId("1");
     Charm charm = rndCharm();
     charm.setId("1");
-
     clientTestDao.get().saveCharm(charm);
     clientTestDao.get().saveClient(clientToSave, charm.id);
-
     //
-
       ClientToEdit client = clientRegister.get().getClient(null);
-
     //
-
     assertThat(client).isNull();
 
   }
 
 
   @Test(expectedExceptions = NullPointerException.class)
-  public void test_save_client_with_null_charm() {
+  public void test_Save_Client_With_Null_Charm() {
 
     ClientToSave clientToSave = rndClientToSave();
     clientToSave.setId("1");
     Charm charm = rndCharm();
     charm.setId("1");
-
     clientTestDao.get().saveCharm(charm);
     clientTestDao.get().saveClient(clientToSave, charm.id);
-
     //
-
       ClientToEdit client = clientRegister.get().getClient(clientToSave.id);
-
     //
-
     assertThat(client.getCharm()).isNull();
   }
 
 
   @Test(expectedExceptions = NullPointerException.class)
-  public void test_balance_null_value() {
+  public void test_Balance_Null_Value() {
 
     ClientToSave clientToSave = rndClientToSave();
     clientToSave.setId("1");
     Charm charm = rndCharm();
     charm.setId("1");
-
     PageFilter pageFilter = new PageFilter("", "", "", 5, 0);
-
     clientTestDao.get().saveCharm(charm);
     clientTestDao.get().saveClient(clientToSave, charm.id);
     clientTestDao.get().saveAccountDatas("1", clientToSave.id, null, null);
-
     //
-
       List<ClientDisplay> list = clientRegister.get().list(pageFilter);
-
     //
-
     for (int i = 0; i < list.size(); i++) {
       assertThat(list.get(i).totalBalanceOfAccounts).isNull();
       assertThat(list.get(i).maximumBalance).isNull();
@@ -450,7 +355,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
 
   @Test(expectedExceptions = NullPointerException.class)
-  public void test_save_client_with_address() {
+  public void test_Save_Client_With_Address() {
 
     ClientToSave clientToSave = rndClientToSave();
     clientToSave.setId("1");
@@ -461,13 +366,9 @@ public class ClientRegisterImplTest extends ParentTestNg {
     clientTestDao.get().saveCharm(charm);
     clientTestDao.get().saveClient(clientToSave, charm.id);
     clientTestDao.get().saveClientAddress("1", "1", address);
-
     //
-
       ClientToEdit client = clientRegister.get().getClient(clientToSave.id);
-
     //
-
     assertThat(client.getFactAddress()).isNotNull();
     assertThat(client.getRegAddress()).isNotNull();
 
@@ -475,31 +376,26 @@ public class ClientRegisterImplTest extends ParentTestNg {
 
 
   @Test(expectedExceptions = NullPointerException.class)
-  public void test_save_client_with_phone() {
+  public void test_Save_Client_With_Phone() {
 
     ClientToSave clientToSave = rndClientToSave();
     clientToSave.setId("1");
     Charm charm = rndCharm();
     charm.setId("1");
     Phones phone = rndPhones();
-
     clientTestDao.get().saveCharm(charm);
     clientTestDao.get().saveClient(clientToSave, charm.id);
     clientTestDao.get().saveClientPhone("1", "1", phone);
-
     //
-
       ClientToEdit client = clientRegister.get().getClient(clientToSave.id);
-
     //
-
     assertThat(client.getPhones()).isNotNull();
 
   }
 
 
   @Test(expectedExceptions = NullPointerException.class)
-  public void test_save_client_with_all_values() {
+  public void test_Save_Client_With_All_Values() {
 
     ClientToSave clientToSave = rndClientToSave();
     clientToSave.setId("1");
@@ -507,23 +403,56 @@ public class ClientRegisterImplTest extends ParentTestNg {
     charm.setId("1");
     Address address = rndAddress();
     Phones phone = rndPhones();
-
     clientTestDao.get().saveCharm(charm);
     clientTestDao.get().saveClient(clientToSave, charm.id);
     clientTestDao.get().saveClientAddress("1", "1", address);
     clientTestDao.get().saveClientPhone("1", "1", phone);
-
     //
-
       ClientToEdit client = clientRegister.get().getClient(clientToSave.id);
-
     //
-
-    assertThat(client.getPhones()).isEqualTo(clientToSave.phones);
+    assertThat(client.getPhones()).isNotNull();
     assertThat(client.getFactAddress()).isNotNull();
     assertThat(client.getRegAddress()).isNotNull();
+    assertThat(client.getFirstName()).isEqualTo(clientToSave.getFirstName());
+    assertThat(client.getLastName()).isEqualTo(clientToSave.getLastName());
+    assertThat(client.getPatron()).isEqualTo(clientToSave.getPatron());
+    assertThat(client.getCharm()).isEqualTo(clientToSave.getCharm());
+    assertThat(client.getGender()).isEqualTo(clientToSave.getGender());
+    assertThat(client.getBirthDay()).isEqualTo(clientToSave.getBirthDay());
+    assertThat(client.getRegAddress()).isEqualTo(clientToSave.getRegAddress());
+    assertThat(client.getFactAddress()).isEqualTo(clientToSave.getFactAddress());
+    assertThat(client.getPhones()).isEqualTo(clientToSave.getPhones());
 
 
+  }
+
+
+  @Test
+  public void test_Client_Deleted_In_Db_And_Client_View() {
+
+    ClientToSave clientToSave = rndClientToSave();
+    clientToSave.setId("1");
+    Charm charm = rndCharm();
+    charm.setId("1");
+    clientTestDao.get().saveCharm(charm);
+    clientTestDao.get().saveClient(clientToSave, charm.id);
+    //
+    Boolean deleted = clientRegister.get().deleteClientById(clientToSave.id);
+    //
+    assertThat(deleted);
+
+  }
+
+
+  @Test
+  public void test_Random_Client_Deleted() {
+
+    saveClientWithData();
+    //
+    Boolean deleted = clientRegister.get().deleteClientById(RND.str(10));
+    //
+
+    assertThat(deleted);
   }
 
 

@@ -31,5 +31,10 @@ public class ClientRegisterImpl implements ClientRegister {
     throw new RuntimeException();
   }
 
+  @Override
+  public Boolean deleteClientById(String id) {
+    throw new RuntimeException();
+  }
+
 
 }

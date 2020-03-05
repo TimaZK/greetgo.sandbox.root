@@ -50,7 +50,8 @@ create table client_addr
     type   varchar(255),
     street varchar(255),
     house  varchar(255),
-    flat   varchar(255)
+    flat   varchar(255),
+    actual      integer default 1
 );
 
 alter table client_addr
@@ -66,7 +67,8 @@ create table client_phone
             references client
             on delete cascade,
     number varchar(200),
-    type   varchar(200)
+    type   varchar(200),
+    actual      integer default 1
 );
 
 alter table client_phone
@@ -83,7 +85,8 @@ create table client_account
             on delete cascade,
     money         double precision,
     number        varchar(255),
-    registered_at timestamp
+    registered_at timestamp,
+    actual      integer default 1
 );
 
 alter table client_account
@@ -113,7 +116,8 @@ create table client_account_transaction
     finished_at timestamp,
     type        varchar(255)
         constraint client_account_transaction_type_fkey
-            references transaction_type
+            references transaction_type,
+            actual      integer default 1
 );
 
 alter table client_account_transaction

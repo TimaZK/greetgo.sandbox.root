@@ -16,4 +16,6 @@ public interface ClientRegister {
 
   void saveClient(ClientToSave clientToSave);
 
+  Boolean deleteClientById(String id);
+
 }
