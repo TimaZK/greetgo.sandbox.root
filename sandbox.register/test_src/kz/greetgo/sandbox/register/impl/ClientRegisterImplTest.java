@@ -35,7 +35,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "id", "asc", 100, 0);
     //
-      List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
+    List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
     //
     assertThat(clientDisplayArr).isSortedAccordingTo(Comparator.comparing(ClientDisplay::getId));
 
@@ -48,7 +48,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "id", "desc", 100, 0);
     //
-      List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
+    List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
     //
     assertThat(clientDisplayArr).isSortedAccordingTo(Comparator.comparing(ClientDisplay::getId).reversed());
 
@@ -61,7 +61,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "fio", "asc", 100, 0);
     //
-      List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
+    List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
     //
     assertThat(clientDisplayArr).isSortedAccordingTo(Comparator.comparing(ClientDisplay::getId));
 
@@ -74,7 +74,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "fio", "desc", 100, 0);
     //
-      List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
+    List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
     //
     assertThat(clientDisplayArr).isSortedAccordingTo(Comparator.comparing(ClientDisplay::getId).reversed());
 
@@ -87,7 +87,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "character", "asc", 100, 0);
     //
-      List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
+    List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
     //
     assertThat(clientDisplayArr).isSortedAccordingTo(Comparator.comparing(ClientDisplay::getId));
 
@@ -100,7 +100,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "character", "desc", 100, 0);
     //
-      List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
+    List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
     //
     assertThat(clientDisplayArr).isSortedAccordingTo(Comparator.comparing(ClientDisplay::getId).reversed());
 
@@ -113,7 +113,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "totalBalanceOfAccounts", "asc", 100, 0);
     //
-      List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
+    List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
     //
     assertThat(clientDisplayArr).isSortedAccordingTo(Comparator.comparing(ClientDisplay::getId));
 
@@ -126,13 +126,12 @@ public class ClientRegisterImplTest extends ParentTestNg {
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "totalBalanceOfAccounts", "desc", 100, 0);
     //
-      List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
+    List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
     //
     assertThat(clientDisplayArr).isSortedAccordingTo(Comparator.comparing(ClientDisplay::getId).reversed());
 
   }
 
-  //TODO смотри выше
 
   @Test(expectedExceptions = RuntimeException.class)
   public void test_Sort_With_Maximum_Balance_Asc() {
@@ -140,7 +139,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "maximumBalance", "asc", 100, 0);
     //
-      List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
+    List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
     //
     assertThat(clientDisplayArr).isSortedAccordingTo(Comparator.comparing(ClientDisplay::getId));
 
@@ -153,7 +152,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "maximumBalance", "desc", 100, 0);
     //
-      List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
+    List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
     //
     assertThat(clientDisplayArr).isSortedAccordingTo(Comparator.comparing(ClientDisplay::getId).reversed());
 
@@ -166,7 +165,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "minimumBalance", "asc", 100, 0);
     //
-      List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
+    List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
     //
     assertThat(clientDisplayArr).isSortedAccordingTo(Comparator.comparing(ClientDisplay::getId));
 
@@ -179,7 +178,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "minimumBalance", "desc", 100, 0);
     //
-      List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
+    List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
     //
     assertThat(clientDisplayArr).isSortedAccordingTo(Comparator.comparing(ClientDisplay::getId).reversed());
 
@@ -192,7 +191,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "", "", 5, 0);
     //
-      List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
+    List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
     //
     assertThat(clientDisplayArr.size()).isEqualTo(5);
 
@@ -205,7 +204,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "", "", 5, 3);
     //
-      List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
+    List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
     //
     assertThat(clientDisplayArr.size()).isEqualTo(5);
 
@@ -218,7 +217,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "", "", 5, getRandomNumberInRange(0,3));
     //
-      List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
+    List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
     //
     assertThat(clientDisplayArr.size()).isEqualTo(5);
 
@@ -231,7 +230,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     saveClientWithData();
     PageFilter pageFilter = new PageFilter("", "", "", 7, 2);
     //
-      List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
+    List<ClientDisplay> clientDisplayArr = clientRegister.get().list(pageFilter);
     //
     assertThat(clientDisplayArr.size()).isEqualTo(6);
 
@@ -249,7 +248,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     clientTestDao.get().saveClient(clientToSave, charm.id);
     clientTestDao.get().saveClientAddress("1", "1", null);
     //
-      ClientToEdit client = clientRegister.get().getClient(clientToSave.id);
+    ClientToEdit client = clientRegister.get().getClient(clientToSave.id);
     //
     assertThat(client.getFactAddress()).isNull();
     assertThat(client.getRegAddress()).isNull();
@@ -273,29 +272,39 @@ public class ClientRegisterImplTest extends ParentTestNg {
   }
 
 
-  @Test(expectedExceptions = NullPointerException.class)
+  @Test
   public void test_Client_DetailIs_Not_Null() {
 
     ClientToSave clientToSave = rndClientToSave();
+    ClientToSave clientToSave1 = rndClientToSave();
     clientToSave.setId("1");
+    clientToSave1.setId("2");
     Charm charm = rndCharm();
+    Charm charm1 = rndCharm();
     charm.setId("1");
+    charm1.setId("2");
     clientTestDao.get().saveCharm(charm);
+    clientTestDao.get().saveCharm(charm1);
     clientTestDao.get().saveClient(clientToSave, charm.id);
+    clientTestDao.get().saveClient(clientToSave1, charm1.id);
     //
-      ClientToEdit client = clientRegister.get().getClient(clientToSave.id);
+    ClientToEdit client = clientRegister.get().getClient("2");
     //
-    assertThat(client).isNotNull();
-    assertThat(client.getId()).isNotNull();
-    assertThat(client.getLastName()).isNotNull();
-    assertThat(client.getFirstName()).isNotNull();
-    assertThat(client.getPatron()).isNotNull();
-    assertThat(client.getCharm()).isNotNull();
-    assertThat(client.getGender()).isNotNull();
-    assertThat(client.getRegAddress()).isNotNull();
-    assertThat(client.getFactAddress()).isNotNull();
-    assertThat(client.getBirthDay()).isNotNull();
-    assertThat(client.getPhones()).isNotNull();
+//    assertThat(client).isNotNull();
+//    assertThat(client.getId()).isNotNull();
+//    assertThat(client.getLastName()).isNotNull();
+//    assertThat(client.getFirstName()).isNotNull();
+//    assertThat(client.getPatron()).isNotNull();
+//    assertThat(client.getCharm()).isNotNull();
+//    assertThat(client.getGender()).isNotNull();
+//    assertThat(client.getRegAddress()).isNotNull();
+//    assertThat(client.getFactAddress()).isNotNull();
+//    assertThat(client.getBirthDay()).isNotNull();
+//    assertThat(client.getPhones()).isNotNull();
+
+    System.out.println(client.getId());
+    System.out.println(client.getLastName());
+    System.out.println(client.getFirstName());
   }
 
 
@@ -309,7 +318,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     clientTestDao.get().saveCharm(charm);
     clientTestDao.get().saveClient(clientToSave, charm.id);
     //
-      ClientToEdit client = clientRegister.get().getClient(null);
+    ClientToEdit client = clientRegister.get().getClient(null);
     //
     assertThat(client).isNull();
 
@@ -326,7 +335,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     clientTestDao.get().saveCharm(charm);
     clientTestDao.get().saveClient(clientToSave, charm.id);
     //
-      ClientToEdit client = clientRegister.get().getClient(clientToSave.id);
+    ClientToEdit client = clientRegister.get().getClient(clientToSave.id);
     //
     assertThat(client.getCharm()).isNull();
   }
@@ -344,7 +353,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     clientTestDao.get().saveClient(clientToSave, charm.id);
     clientTestDao.get().saveAccountDatas("1", clientToSave.id, null, null);
     //
-      List<ClientDisplay> list = clientRegister.get().list(pageFilter);
+    List<ClientDisplay> list = clientRegister.get().list(pageFilter);
     //
     for (int i = 0; i < list.size(); i++) {
       assertThat(list.get(i).totalBalanceOfAccounts).isNull();
@@ -367,7 +376,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     clientTestDao.get().saveClient(clientToSave, charm.id);
     clientTestDao.get().saveClientAddress("1", "1", address);
     //
-      ClientToEdit client = clientRegister.get().getClient(clientToSave.id);
+    ClientToEdit client = clientRegister.get().getClient(clientToSave.id);
     //
     assertThat(client.getFactAddress()).isNotNull();
     assertThat(client.getRegAddress()).isNotNull();
@@ -387,7 +396,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     clientTestDao.get().saveClient(clientToSave, charm.id);
     clientTestDao.get().saveClientPhone("1", "1", phone);
     //
-      ClientToEdit client = clientRegister.get().getClient(clientToSave.id);
+    ClientToEdit client = clientRegister.get().getClient(clientToSave.id);
     //
     assertThat(client.getPhones()).isNotNull();
 
@@ -408,7 +417,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     clientTestDao.get().saveClientAddress("1", "1", address);
     clientTestDao.get().saveClientPhone("1", "1", phone);
     //
-      ClientToEdit client = clientRegister.get().getClient(clientToSave.id);
+    ClientToEdit client = clientRegister.get().getClient(clientToSave.id);
     //
     assertThat(client.getPhones()).isNotNull();
     assertThat(client.getFactAddress()).isNotNull();
@@ -439,7 +448,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     //
     Boolean deleted = clientRegister.get().deleteClientById(clientToSave.id);
     //
-    assertThat(deleted);
+    assertThat(deleted).isTrue();
 
   }
 
@@ -451,8 +460,7 @@ public class ClientRegisterImplTest extends ParentTestNg {
     //
     Boolean deleted = clientRegister.get().deleteClientById(RND.str(10));
     //
-
-    assertThat(deleted);
+    assertThat(deleted).isTrue() ;
   }
 
 

@@ -17,13 +17,15 @@ public class ClientRegisterImpl implements ClientRegister {
   public BeanGetter<ClientDao> clientDao;
 
   @Override
-  public ClientToEdit getClient(String clientId) {sdfsdfsfd
-    throw new NullPointerException();
+  public ClientToEdit getClient(String clientId) {
+    return clientDao.get().getClientDetail(clientId);
+
   }
 
   @Override
   public List<ClientDisplay> list(PageFilter pageFilter) {
-    throw new RuntimeException();
+//    throw new RuntimeException();
+      return clientDao.get().list();
   }
 
   @Override
